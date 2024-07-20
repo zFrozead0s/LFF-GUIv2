@@ -5,6 +5,7 @@ namespace LFFPlugin;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use LFFPlugin\command\LFFCommand;
+use LFFPlugin\event\InventoryClickListener;
 
 class Main extends PluginBase {
 
@@ -16,6 +17,8 @@ class Main extends PluginBase {
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 
         $this->getServer()->getCommandMap()->register("lff", new LFFCommand($this));
+        $this->getServer()->getPluginManager()->registerEvents(new InventoryClickListener($this), $this);
+
         $this->getLogger()->info("LFFPlugin ha sido habilitado.");
     }
 

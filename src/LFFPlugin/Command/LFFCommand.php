@@ -7,7 +7,8 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\item\ItemFactory;
 use pocketmine\inventory\SimpleInventory;
-use pocketmine\command\utils\CommandException;
+use pocketmine\inventory\Inventory;
+use pocketmine\inventory\InventoryTransaction;
 use LFFPlugin\Main;
 
 class LFFCommand extends Command {

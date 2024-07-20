@@ -1,1 +1,8 @@
-
+menu-title: "Looking for Faction"
+options:
+  - name: "Clase-1"
+    description: "Descripción de Clase-1"
+  - name: "Clase-2"
+    description: "Descripción de Clase-2"
+  - name: "Clase-3"
+    description: "Descripción de Clade-3"

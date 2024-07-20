@@ -1,12 +1,12 @@
 name: LFFPlugin
 main: LFFPlugin\Main
-version: 0.1.0-BETA
+version: 1.0.0
 api: [5.0.0]
-author: zFroz
+author: Froz
 description: Un plugin que abre un menú GUI con el comando /lff.
 commands:
   lff:
-    description: Abre el menú.
+    description: Abre el menú Looking for Faction.
     usage: /lff
     permission: lffplugin.command.lff
 permissions:

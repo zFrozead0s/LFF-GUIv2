@@ -1,14 +1,13 @@
 <?php
 
-namespace LFFPlugin\Command;
+namespace LFFPlugin\command;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
-use pocketmine\item\Item;
-use pocketmine\inventory\Inventory;
+use pocketmine\item\ItemFactory;
 use pocketmine\inventory\SimpleInventory;
-use pocketmine\plugin\PluginBase;
+use pocketmine\command\utils\CommandException;
 use LFFPlugin\Main;
 
 class LFFCommand extends Command {
@@ -17,7 +16,7 @@ class LFFCommand extends Command {
     private $plugin;
 
     public function __construct(Main $plugin) {
-        parent::__construct("lff", "Abre el menú Looking for Faction.", "/lff", []);
+        parent::__construct("lff", "Abre el menú Looking for Faction.", "/lff");
         $this->setPermission("lffplugin.command.lff");
         $this->plugin = $plugin;
     }
@@ -39,13 +38,13 @@ class LFFCommand extends Command {
         $inventory = new SimpleInventory(count($options));
 
         foreach ($options as $index => $option) {
-            $item = Item::get(Item::PAPER);
+            $item = ItemFactory::getInstance()->get(339); // Papel
             $item->setCustomName($option["name"]);
             $item->setLore([$option["description"]]);
             $inventory->setItem($index, $item);
         }
 
-        $sender->addWindow($inventory);
+        $sender->setCurrentWindow($inventory);
         return true;
     }
 }

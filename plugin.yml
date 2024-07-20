@@ -1,0 +1,15 @@
+name: LFFPlugin
+main: LFFPlugin\Main
+version: 0.1.0-BETA
+api: [5.0.0]
+author: zFroz
+description: Un plugin que abre un menú GUI con el comando /lff.
+commands:
+  lff:
+    description: Abre el menú.
+    usage: /lff
+    permission: lffplugin.command.lff
+permissions:
+  lffplugin.command.lff:
+    description: Permite usar el comando /lff
+    default: true

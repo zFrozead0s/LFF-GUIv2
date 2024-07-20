@@ -7,8 +7,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\item\ItemFactory;
 use pocketmine\inventory\SimpleInventory;
-use pocketmine\inventory\Inventory;
-use pocketmine\inventory\InventoryTransaction;
 use LFFPlugin\Main;
 
 class LFFCommand extends Command {
@@ -33,7 +31,6 @@ class LFFCommand extends Command {
         }
 
         $config = $this->plugin->getConfigData();
-        $menuTitle = $config->get("menu-title", "Looking for Faction");
         $options = $config->get("options", []);
 
         $inventory = new SimpleInventory(count($options));

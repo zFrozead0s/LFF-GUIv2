@@ -19,4 +19,7 @@ class Main extends PluginBase {
         $this->getLogger()->info("LFFPlugin ha sido habilitado.");
     }
 
-    public function getConfig
+    public function getConfigData(): Config {
+        return $this->config;
+    }
+}

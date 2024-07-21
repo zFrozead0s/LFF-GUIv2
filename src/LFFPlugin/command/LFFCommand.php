@@ -36,7 +36,7 @@ class LFFCommand extends Command {
         $inventory = new SimpleInventory(count($options));
 
         foreach ($options as $index => $option) {
-            $item = ItemFactory::getInstance()->get(ID::Paper); // Papel
+            $item = VanillaItems::getInstance()->get(ID::Paper); // Papel
             $item->setCustomName($option["name"]);
             $item->setLore([$option["description"]]);
             $inventory->setItem($index, $item);

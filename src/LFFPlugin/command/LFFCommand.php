@@ -5,7 +5,7 @@ namespace LFFPlugin\command;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
-use pocketmine\item\ItemFactory;
+use pocketmine\item\VanillaItems;
 use pocketmine\inventory\SimpleInventory;
 use LFFPlugin\Main;
 
@@ -36,7 +36,7 @@ class LFFCommand extends Command {
         $inventory = new SimpleInventory(count($options));
 
         foreach ($options as $index => $option) {
-            $item = ItemFactory::getInstance()->get(202); // Papel
+            $item = ItemFactory::getInstance()->get(ID::Paper); // Papel
             $item->setCustomName($option["name"]);
             $item->setLore([$option["description"]]);
             $inventory->setItem($index, $item);
